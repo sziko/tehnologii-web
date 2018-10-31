@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.top-navbar {
+text-align: center;
+background: burlywood;
+height: 50px;
+font-size: 20px;
+}
+
+.top-navbar span {
+    height: 100%;
+}
+
+.top-navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.top-navbar a:hover {
+    color: darkgoldenrod;
+    font-size: 22px;
+}
+
+.active {
+    color: darkgoldenrod;
+    font-size: 22px;
+    height: 100%;
+}
+
+.top-navbar span {
+margin-right: 5px;
+margin-left: 5px;
+position: relative;
+top: 25%;
+}
+
+.left-part {
+    position: absolute;
+    left: 32px;
+    top: 130px;
+}
+
+.left-part img {
+    width: 150px;
+    margin-bottom: 32px;
+}
+
+.mid-section {
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.mid-section h3 {
+    text-align: left;
+}
+
+.right-part {
+position: absolute;
+right: 32px;
+top: 130px;
+}
+
+.right-part ul {
+    list-style-type: none;
+    font-size: 25px;
+}
+
+.right-part li {
+    margin: 5px;
+}
+
+.right-part a {
+    text-decoration: none;
+    color: black;
+}
+
+.right-part a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.showHide {
+    display: inline;
+}
