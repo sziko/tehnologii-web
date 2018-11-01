@@ -15,3 +15,8 @@ body {
 @media (max-width: 720px) {
 
 }
+
+footer {
+    position: absolute;
+    bottom: 5px;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/index-design.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/wowjs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Tehnologi Web</title>
@@ -17,7 +18,7 @@
         <a href="users.html">Users</a>
     </div>
 </div>
-<nav class="top-navbar">
+<nav class="top-navbar wow bounceInDown" data-wow-duration="0.5">
     <span><a href="#" class="active">Home</a></span>
     <span><a href="profile.html">Sign Up</a></span>
     <span><a href="users.html">Users</a></span>
@@ -27,7 +28,7 @@
     <h1>Laboratoare Tehnologii Web</h1>
 </header>
 
-<div class="left-part">
+<div class="left-part wow bounceInLeft" data-wow-duration="0.5">
     <ul style="list-style: none">
         <li class="left-part-img"><img src="../resources/html.png"/></li>
         <li class="left-part-img"><img src="../resources/css.png"/></li>
@@ -35,7 +36,7 @@
     </ul>
 </div>
 
-<section class="mid-section">
+<section class="mid-section wow fadeIn " data-wow-duration="0.5">
     <h3>Some text</h3>
     <p><em><strong>Lorem ipsum</strong></em> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore
@@ -130,7 +131,7 @@
     </blockquote>
 </section>
 
-<div class="right-part">
+<div class="right-part wow fadeInRight">
     <ul>
         <li><a href="#">Unordered list 1</a></li>
         <li><a href="#">Unordered list 2</a></li>
@@ -148,6 +149,10 @@
 <footer>
     <span>Copyright © <a href="https://github.com/sziko">Szilard Nagy</a></span>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 <script src="../js/script.js"></script>
 </body>
 </html>
