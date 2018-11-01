@@ -1,5 +1,17 @@
+body {
+    height: 100%;
+}
+
 .mid-section {
     width: 300px;
     text-align: left;
     margin-top: 100px;
+}
+
+@media only screen and (max-device-width: 450px) {
+
+}
+
+@media (max-width: 720px) {
+
 }

@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Tehnologi Web</title>
 </head>
-<body class="container-fluid">
+<body>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Menu</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="index.html" class="active">Home</a>
+        <a href="profile.html">Sign Up</a>
+        <a href="users.html">Users</a>
+    </div>
+</div>
 <nav class="top-navbar">
     <span><a href="index.html">Home</a></span>
     <span><a href="profile.html">Sign Up</a></span>
-    <span><a href="#">Sign In</a></span>
     <span><a href="users.html" class="active">Users</a></span>
-    <span><a href="#">About</a></span>
 </nav>
 
 <header>
@@ -21,34 +27,38 @@
 </header>
 
 <div class="left-part">
-    <img src="../resources/html.png"/>
-    <br>
-    <img src="../resources/css.png"/>
-    <br>
-    <img src="../resources/js.png"/>
+    <ul style="list-style: none">
+        <li class="left-part-img"><img src="../resources/html.png"/></li>
+        <li class="left-part-img"><img src="../resources/css.png"/></li>
+        <li class="left-part-img"><img src="../resources/js.png"/></li>
+    </ul>
 </div>
 
 <section class="mid-section">
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Gender</th>
+            <th scope="col">Number</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
         </tr>
         </thead>
         <tbody>
         <tr>
+            <th scope="row">1</th>
             <td>P1.username</td>
             <td>p1.email</td>
             <td>p1.gender</td>
         </tr>
         <tr>
+            <th scope="row">2</th>
             <td>p2.username</td>
             <td>p2.email</td>
             <td>p2.gender</td>
         </tr>
         <tr>
+            <th scope="row">3</th>
             <td>p3.username</td>
             <td>p3.email</td>
             <td>p3.gender</td>
@@ -75,5 +85,6 @@
 <footer>
     <span>Copyright © <a href="https://github.com/sziko">Szilard Nagy</a></span>
 </footer>
+<script src="../js/script.js"></script>
 </body>
 </html>

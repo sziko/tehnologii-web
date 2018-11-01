@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Tehnologi Web</title>
 </head>
-<body class="container-flui">
+<body>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Menu</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="index.html" class="active">Home</a>
+        <a href="profile.html">Sign Up</a>
+        <a href="users.html">Users</a>
+    </div>
+</div>
 <nav class="top-navbar">
     <span><a href="index.html">Home</a></span>
     <span><a href="profile.html" class="active">Sign Up</a></span>
-    <span><a href="#">Sign In</a></span>
     <span><a href="users.html">Users</a></span>
-    <span><a href="#">About</a></span>
 </nav>
 
 <header>
@@ -21,11 +27,11 @@
 </header>
 
 <div class="left-part">
-    <img src="../resources/html.png"/>
-    <br>
-    <img src="../resources/css.png"/>
-    <br>
-    <img src="../resources/js.png"/>
+    <ul style="list-style: none">
+        <li class="left-part-img"><img src="../resources/html.png"/></li>
+        <li class="left-part-img"><img src="../resources/css.png"/></li>
+        <li class="left-part-img"><img src="../resources/js.png"/></li>
+    </ul>
 </div>
 
 <section class="mid-section">
@@ -73,5 +79,6 @@
 <footer>
     <span>Copyright © <a href="https://github.com/sziko">Szilard Nagy</a></span>
 </footer>
+<script src="../js/script.js"></script>
 </body>
 </html>
