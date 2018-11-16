@@ -65,6 +65,26 @@
 			green : "green",
 			white : "white"
 		}, "black"));
+		console.log('\n');
+		
+		// bonus 1
+		function toRoman(number) {
+			if (typeof num !== 'number') 
+				return false; 
+
+			var digits = String(+num).split("");
+			var	key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+						"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+						"","I","II","III","IV","V","VI","VII","VIII","IX"];
+			var	roman_num = "";
+			var i = 3;
+
+			while (i--)
+				roman_num = (key[+digits.pop() + (i * 10)] || "") + roman_num;
+
+			return Array(+digits.join("") + 1).join("M") + roman_num;			
+		}
+		console.log(toRoman(10));
 	</script>
 </body>
 </html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lab7</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab7</title>
+</head>
+<body>
+	<div id="redBox" style="height: 100px; width: 100px; background: red; margin-left: 0px"></div><br>
+	<div id="blueBox" style="height: 100px; width: 100px; background: blue; margin-left: 0px"></div>
+	<hr>
+	<br>
+	<button id="btn">Animate</button>
+
+	<script type="text/javascript">
+	// p1
+	var a = 1;
+
+	function b() {
+		a = 10;
+		return;
+	}
+	b();
+	console.log('a = ' + a);
+
+	// p2
+	function print(i) {
+    	console.log(i)
+	}
+
+	for (var i=0; i<5; ++i){
+	    setTimeout(print,i*1000,i);
+	}
+
+	// p3
+	setTimeout(function() {
+		try {
+			throw new Error('Error');
+		} catch(err) {
+			console.log(err);
+		}
+	}, 1000);
+
+	// p4
+	// es5
+	function Animal(type, color) {
+		this.type = type;
+		this.color = color;
+
+		getColor = function() {
+			return this.color;
+		}
+	}
+
+	function Fish(fishType) {
+		Animal.call(fishType, 'blue');
+
+		getFishType = function() {
+			return Animal.getType();
+		}
+	}
+
+	function Dog(dogType) {
+		Animal.call(dogType, 'brown');
+
+		getDogType = function() {
+			return Animal.getType();
+		}
+	}
+
+	function DogType(typeName, furColor) {
+		Dog.call(typeName);
+		this.furColor = furColor;
+
+		getFurColor = function() {
+			return this.furColor;
+		}
+	}
+
+	// es6
+	class Animal {
+		constructor(type, color) {
+			this.color = color;
+			this.type = type;
+		}
+
+		getColor() {
+			return this.color;
+		}
+	}
+
+	class Fish extends Animal {
+		constructor(fishType) {
+			super(fishType, 'blue');
+		}
+
+		getFishType() {
+			return super.type;
+		}
+	}
+
+	class Dog extends Animal {
+		constructor(dogType) {
+			super(dogType, 'brown');
+		}
+
+		getDogType() {
+			return super.type;
+		}
+	}
+
+	class DogType extends Dog {
+		constructor(typeName, furColor) {
+			super(typeName);
+			this.furColor = furColor;
+		}
+
+		getFurColor() {
+			return this.furColor;
+		}
+	}
+
+	// p5
+	function nonBlocking() {
+  		setTimeout(function() {
+    		var a = 0;
+    		setTimeout(() => {
+	      		for (var i = 0; i < 1000; i++) {
+	        		setTimeout(() => {
+	          			for (var j = 0; j < i * 1000; j++) {
+	            			if (i < j) {
+	              				a++;
+	            			}
+	          			}
+	        		}, 0);
+	      		}
+    		}, 0);
+  		}, 0);
+	}
+	nonBlocking();
+
+	// p6
+	var red = document.getElementById("redBox");
+	var blue = document.getElementById("blueBox");
+	var w = window.innerWidth;
+	var isRedSelected = false;
+	var isBlueSelected = false;
+	var marginRed = 0;
+	var marginBlue = 0;
+
+	function moveBox() {
+		if(marginRed < w - 100) {
+			if(isRedSelected) {
+				var newMargin = marginRed + 20;
+				marginRed = newMargin;
+				red.style.marginLeft = newMargin.toString() + 'px'; 
+			}
+		} else {
+			marginRed = 0;
+			red.style.marginLeft = '0px';
+		}
+
+		if(marginBlue < w - 100) {
+			if(isBlueSelected) {
+				var newMargin = marginBlue + 20;
+				marginBlue = newMargin;
+				blue.style.marginLeft = newMargin.toString() + 'px';
+			}
+		} else {
+			marginBlue = 0;
+			blue.style.marginLeft = '0px';
+		}
+	}
+	function btnClick() {
+		document.getElementById("btn").addEventListener("click", function() {
+			moveBox();
+		});
+	}
+	function selectBox() {
+		red.addEventListener("click", function(){
+    		red.style.border = '3px solid black';
+    		blue.style.border = '0px';
+    		isRedSelected = true;
+    		isBlueSelected = false;
+		});
+
+		blue.addEventListener("click", function(){
+    		red.style.border = '0px';
+    		blue.style.border = '3px solid black';
+    		isBlueSelected = true;
+    		isRedSelected = false;
+		});
+	}
+	btnClick();
+	selectBox();
+</script>
+</body>
+</html>
+</body>
+</html>
