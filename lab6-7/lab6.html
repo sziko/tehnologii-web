@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// p1
+		function reverseStr(str) {
+			var splitStr = str.split('');
+			var reverseStr = splitStr.reverse();
+			return reverseStr.join(''); 
+		}
+		console.log(reverseStr('test'));
+		console.log('\n');
+
+		// p2
+		function removeCharAtIndex(str, index) {
+			return str.substring(0, index) + str.substring(index + 1, str.length);
+		}
+		console.log(removeCharAtIndex('test', 2));
+		console.log('\n');
+
+		// p3
+		function isDivisibleByThreeOrSeven(number) {
+			return (number % 3) == 0 || (number % 7) == 0; 
+		} 
+		console.log(isDivisibleByThreeOrSeven(4));
+		console.log(isDivisibleByThreeOrSeven(7));
+		console.log('\n');
+
+		// p4
+		function isNumeric(input) {
+			return isNaN(input);
+		}
+		console.log(isNumeric(5));
+		console.log(isNumeric('asd'));
+		console.log('\n');
+
+		// p5
+		function sumOfArray(array) {
+			var sum = 0;
+			for(var i = 0; i < array.length; ++i) {
+				sum += array[i];	
+			}
+
+			return sum;
+		}
+		console.log(sumOfArray([1,2,3]));
+		console.log(sumOfArray([1,2,'a',3]));
+		console.log(sumOfArray('asd'));
+		console.log('\n');
+
+		// p6
+		function hasProperty(object, property) {
+			return object.hasOwnProperty(property);
+		}
+		console.log(hasProperty({
+			red : "red",
+			green : "green",
+			white : "white"
+		}, "green"));
+		console.log(hasProperty({
+			red : "red",
+			green : "green",
+			white : "white"
+		}, "black"));
+	</script>
+</body>
+</html>
