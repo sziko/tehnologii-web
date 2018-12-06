@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab9</title>
+</head>
+<body>
+	<button id="btn">Get Posts</button>
+	<button id="btn-lab10">Get From Lab10</button>
+	<hr>
+
+	<script type="text/javascript">
+		
+		function ajaxCall() {
+			document.getElementById("btn").addEventListener("click", () => {
+				
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () { 
+			    	if (this.readyState == 4 && this.status == 200) {
+			    		var myObj = JSON.parse(this.responseText);
+			        	for(var i in myObj) {
+			        		var uid = document.createElement("LABEL")
+			        		var title = document.createElement("LABEL");
+			        		var body = document.createElement("PARAGRAPH");
+			        		var separator = document.createElement("HR");
+			        		uid.innerHTML = 'User Id: ' + myObj[i].userId;
+			        		title.innerHTML = 'Title: ' + myObj[i].title;
+			        		body.innerHTML = 'Body: ' + myObj[i].body;
+			        		document.body.appendChild(uid);
+			        		document.body.appendChild(title);
+			        		document.body.appendChild(body);
+			        		document.body.appendChild(separator);
+			        	}
+			    	}
+    			}
+    			request.open('GET', 'https://jsonplaceholder.typicode.com/posts');
+    			request.send();
+			});
+
+			document.getElementById("btn-lab10").addEventListener("click", () => {
+				
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () { 
+			    	if (this.readyState == 4 && this.status == 200) {
+			    		var myObj = JSON.parse(this.responseText);
+			        	for(var i in myObj) {
+			        		var uid = document.createElement("LABEL")
+			        		var title = document.createElement("LABEL");
+			        		var body = document.createElement("PARAGRAPH");
+			        		var separator = document.createElement("HR");
+			        		uid.innerHTML = 'User Id: ' + myObj[i].userId;
+			        		title.innerHTML = 'Title: ' + myObj[i].title;
+			        		body.innerHTML = 'Body: ' + myObj[i].body;
+			        		document.body.appendChild(uid);
+			        		document.body.appendChild(title);
+			        		document.body.appendChild(body);
+			        		document.body.appendChild(separator);
+			        	}
+			    	}
+    			}
+    			request.open('GET', 'http://localhost:3000/api');
+    			request.send();
+			});
+		}
+		ajaxCall();
+	</script>
+</body>
+</html>
