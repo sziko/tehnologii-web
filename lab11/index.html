@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lab11</title>
+</head>
+<body>
+	<button id="btn_mongodb">Mongodb posts</button>
+	<button id="btn_mysql">Mysql posts</button>
+	<script type="text/javascript">
+		function ajaxCall() {
+			document.getElementById("btn_mongodb").addEventListener("click", () => {
+				
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () { 
+			    	if (this.readyState == 4 && this.status == 200) {
+			    		var myObj = JSON.parse(this.responseText);
+			    		generateDynamicTable(myObj);	
+			    	}
+    			}
+    			request.open('GET', 'http://localhost:3000/mongodb/posts');
+    			request.send();
+			});
+
+			document.getElementById("btn_mysql").addEventListener("click", () => {
+				
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () { 
+			    	if (this.readyState == 4 && this.status == 200) {
+			    		var myObj = JSON.parse(this.responseText);
+			        	generateDynamicTable(myObj);
+			    	}
+    			}
+    			request.open('GET', 'http://localhost:3000/mysql/posts');
+    			request.send();
+			});
+		}
+
+		function generateDynamicTable(json){
+	
+			var size = json.length;
+			
+			if(size>0){
+				
+				var table = document.createElement("table");
+
+	 
+				var col = []; 
+				for (var i = 0; i < size; i++) {
+					for (var key in json[i]) {
+						if (col.indexOf(key) === -1) {
+							col.push(key);
+						}
+					}
+				}
+				
+				var tHead = document.createElement("thead");	
+				var hRow = document.createElement("tr");
+				
+				for (var i = 0; i < col.length; i++) {
+						var th = document.createElement("th");
+						th.innerHTML = col[i];
+						hRow.appendChild(th);
+				}
+				tHead.appendChild(hRow);
+				table.appendChild(tHead);
+
+				document.body.appendChild(table);		
+			}	
+		}
+
+		ajaxCall();
+ 
+	</script>
+</body>
+</html>
